@@ -1,0 +1,425 @@
+/*FUENTES*/
+@font-face{
+    font-family: "nevis";
+    src: url(fonts/nevis.eot);
+    src: url(fonts/nevis.eot?#iefix) format("embedded-opentype"),/*extension para internet explorer*/
+         url(fonts/nevis.woff) format("woff"),
+         url(fonts/nevis.ttf) format("truetype"),
+         url(fonts/nevis.svg) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "fajala";
+    src: url(fonts/FjallaOne-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "icons";
+    src: url(fonts/websymbols-regular-webfont.svg#WebSymbolsRegular) format("svg"),/*#WebSymbolsRegular -> para selecciones el tipo de fuente*/
+         url(fonts/websymbols-regular-webfont.eot);
+    src: url(fonts/websymbols-regular-webfont.eot?#iefix) format("embedded-opentype"),/*extension para internet explorer*/
+         url(fonts/websymbols-regular-webfont.woff) format("woff"),
+         url(fonts/websymbols-regular-webfont.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*ESTILOS GENERALES*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url(../img/paven.png);/*El ../ es para ir una carpeta atras*/
+}
+
+a{
+    text-decoration: none;
+    color: #568b25;
+}
+
+a:visited{
+    color: #568b25;
+}
+
+a:hover{
+    color: #2e4914;
+}
+
+.azul{
+    color: #417FD6 !important;
+}
+
+.rojo{
+    color: #9B2422 !important;
+}
+
+.naranja{
+    color: #D69D2A;
+}
+
+/*FORMULARIOS*/
+input[type="text"],
+input[type="password"]{
+    outline: none;/*Para sacar borde azul que viene por defecto*/
+    border: 1px solid #c9c9c9;
+    box-shadow: 0px 0px 2px #ccc inset;
+    background-color: white;
+    padding: 1px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: rgb(77, 77, 77);
+    transition: all 300ms;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+    background-color: rgb(255, 255, 209);
+    border: 1px solid #70b231;
+    color: black;
+}
+
+
+input[type="submit"]{
+    display: block;
+    border-radius: 6px;
+    width: 60px;
+    padding: 3px;
+    margin: 10px;
+    background-color: #70b231;
+    color: white;
+    cursor: pointer;
+    border: 2px solid green;
+    border-top: 2px solid rgb(148, 231, 148);
+    border-left: 2px solid rgb(148, 231, 148);
+    box-shadow: 1px 1px 4px grey;
+    transition: all 200ms;
+}
+
+input[type="submit"]:hover{
+    box-shadow: 1px 1px 6px grey;
+
+}
+
+input[type="submit"]:active{
+    outline: none;/*Saca borde azul que aparece cuando presiono boton*/
+    border: 2px solid rgb(148, 231, 148);
+    border-top: 2px solid green;
+    border-left: 2px solid green;
+    box-shadow: none;
+}
+
+/*CABECERA*/
+#header{
+    min-width: 1024px;
+    width: 100%;
+    height: 240px;
+    margin: 0px auto;
+}
+
+#header a{
+    text-decoration: none;
+    color: #70b231;
+    transition: all 400ms;
+}
+
+#header #logotipo{
+    width: 800px;
+    padding-top: 20px;
+    
+    margin: 0px auto;
+}
+
+#header #logotipo img{
+    display: block;
+    text-align: center;
+    margin: 0px auto;
+    width: 140px;
+    
+}
+
+#header h1{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    font-size: 40px;
+    color: #70b231;
+    font-family: "nevis";
+    text-transform: uppercase;
+    text-shadow: 0px 2px 2px rgb(51, 51, 51);
+    letter-spacing: 3px;
+    
+}
+
+#header h1 a:hover{
+    text-shadow: 0px 2px 2px rgb(51, 51, 51), 0px 0px 5px #70b231;
+}
+
+/*BARRA DE NAVEGACION*/
+
+#nav{
+    width: 100%;
+    height: 40px;
+    background-color: #333333;
+    color: white;
+    font-family: sans-serif, helvetica, arial;
+    font-size: 14px;
+    box-shadow: 0px 0px 2px gray;
+    
+}
+
+#nav ul{
+    list-style: none;
+    text-decoration: none;
+    margin: 0px auto;
+    width: 1094px;
+    
+}
+
+#nav > ul > li{
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid gray;
+    transition: all 200ms;
+}
+
+#nav > ul > li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding-left: 23px;
+    padding-right: 23px;
+    
+}
+
+#nav > ul > li > a:first-child{
+    border-left: 1px solid gray;
+}
+
+#nav > ul > li:hover{
+    background-color: #70b231;
+    box-shadow: 0px 0px 6px green inset;
+}
+
+/*MENU DESPLEGABLE*/
+
+#nav > ul > li > ul{
+    display:none;/*No se ve hasta que le haga un "hover"*/
+    position: absolute;/*Para acomodarlo donde quiera y no desacomodar el menu */
+    width: 160px;
+    z-index: 1;
+    box-shadow: 0px 2px 4px gray;
+}
+
+#nav > ul > li:hover >ul{
+    display: block;
+} 
+
+#nav > ul > li > ul > li > a{
+    color: #666;
+}
+
+
+#nav > ul > li:hover > ul > li{
+    background-color: #f2f1f0;
+    border-bottom: 1px solid #d6d6d6;
+    line-height: 40px;
+    font-size: 12px;
+    transition: all 200ms;
+}
+
+#nav > ul > li:hover > ul > li:hover{
+    background-color: #e0e0e0;
+    box-shadow: 0px 0px 6px #c7c7c7 inset;
+}
+
+/*CONTENIDO PRINCIPAL*/
+
+#content{
+    width: 1520px;
+    min-height: 1800px;
+    margin: 0px auto;
+    border: 1px solid black;
+}
+
+/*BARRA LATERAL*/
+
+#aside,
+#frases{
+    width: 200px;
+    float: left;
+    margin: 30px;
+    margin-left: 150px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 4px #ccc;
+    font-family: sans-serif,Arial, Helvetica;
+}
+
+
+#aside .widget,
+#frases p{
+    display: block;
+    width: 180px;   
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    border-bottom: 2px dashed #ccc;
+    margin: 0px auto;
+}
+#frases p{
+    border: none;
+}
+
+#frases a{
+    display: block;
+    margin-left: 33px;
+    padding-bottom: 15px;
+}
+#aside .widget:last-child{
+    margin-bottom: 20px;
+}
+
+#aside h3{
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #F2F3F2;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: #333333;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 15px;
+}
+
+/*FORMULARIOS BARRA LATERAL*/
+
+#aside div label,
+#aside div input[type="text"],
+#aside div input[type="password"],
+#aside div a{
+    display: block;
+    width: 95%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+
+}
+
+#aside div label,
+#aside div input[type="text"],
+#aside div input[type="password"],
+#aside div input[type="submit"]{
+    text-align: center;
+    margin: 5px auto;
+}
+
+#aside div input[type="submit"]{
+    margin-top: 15px;
+
+}
+
+#aside li{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+    list-style: square;/*Elementos de la lista se destacan con un cuadradito en vez de un circulo*/
+
+}
+
+#aside li:first-child{
+    margin-top: 20px;
+}
+
+
+/*SECCIONES*/
+
+#sections{
+    margin-right: 150px;
+    float: right;
+    width: 935px;
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+#sections h2{
+    font-family: "fajala";
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: normal;/*Le saca lo de negrita*/
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid grey;
+    margin-top: -30px;
+    
+}
+
+#sections section{
+    margin-top: 40px;
+    background-color: white;
+    border: 1px grey;
+    box-shadow: 0px 0px 4px grey;
+    padding: 30px;
+    padding-bottom: 10px;
+    color: #333333;
+    font-size: 16px;
+}
+
+#sections .article{
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#sections .date{
+    color: gray;
+    font-size: 14px;
+}
+
+.sticker1, .sticker2{
+    position: absolute;
+    z-index: 1;
+    margin-top: -47px;
+}
+
+.sticker2{
+    margin-left: 840px;
+}
+
+.icon{
+    font-family: "icons";
+    float: left;
+    margin-right: 6px;
+    margin-top: -3px;
+    font-size: 16px;
+}
+
+/*PIE DE PAGINA*/
+#history{
+    display: block;
+    clear: both;
+    float: right;
+    margin-right: 148px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-family: sans-serif,Arial, Helvetica;
+
+}
+
+#footer{
+    margin-top: 30px;
+    width: 100%;
+    color: white;
+    background-color: #333333;
+    text-align: center;
+    font-family: sans-serif,Arial, Helvetica;
+    padding: 15px;
+    font-size: 14px;
+    box-shadow: 0px 0px 3px gray;
+}
